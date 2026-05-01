@@ -152,3 +152,9 @@ Projeto iniciado no bootcamp da [DIO](https://www.dio.me/) e evoluído com:
 - Banco de dados com persistência em JSON
 - Painel administrativo para gerenciamento de conteúdo
 - Organização do código: CSS em arquivos próprios, JS separado por página
+
+<img src="screenshots/home.png" width="600" alt="Página Inicial">
+<img src="screenshots/home2.png" width="600" alt="Página Inicial">
+<img src="screenshots/movie.png" width="600" alt="Página do Filme">
+<img src="screenshots/admin.png" width="600" alt="Admin">
+
