@@ -1,0 +1,19 @@
+{
+  "name": "spiderman-multiverses",
+  "version": "1.0.0",
+  "description": "Spider-Man Multiverses - Node.js + REST API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "lowdb": "^1.0.0",
+    "multer": "^2.1.1"
+  }
+}

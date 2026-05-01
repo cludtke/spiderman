@@ -1,0 +1,267 @@
+@import url('reset.css');
+@import url('global.css');
+@import url('components/_navigator.css');
+@import url('components/_pills.css');
+@import url('components/_link-button.css');
+@import url('components/_gallery.css');
+
+.s-wrapper {
+  display: flex;
+  height: 100vh;
+  flex-flow: row nowrap;
+  background-color: aqua;
+}
+
+.s-wrapper video {
+  position: fixed;
+  width: 100%;
+
+}
+
+.s-wrapper .s-left-column {
+  width: 100px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  padding-right: 50px;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.s-wrapper .s-main-content {
+  height: 100%;
+  width: 100%;
+  padding-left: 130px;
+  position: relative;
+}
+
+.s-wrapper .s-main-content__top {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.s-wrapper .s-main-content__bottom {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.s-wrapper .s-main-content .s-logo img {
+  margin-top: 50px;
+  margin-left: 0;
+  margin-bottom: 30px;
+}
+
+.s-wrapper .s-main-content__top .s-description {
+  background-color: rgba(0, 0, 0, .7);
+  max-width: 50%;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.s-wrapper .s-main-content__top .s-description .s-description__text p {
+  color: white;
+  line-height: 170%;
+}
+
+.s-wrapper .s-main-content__top .s-description .pills {
+  margin-bottom: 20px;
+}
+
+.s-wrapper .s-main-content .s-links {
+  padding: 20px;
+  padding-left: 0;
+}
+
+.s-wrapper .s-main-content .s-links ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.s-spiderman-01-01 {
+  background-image: url('../images/spiderman-tobey/movie-01/background.png');
+  background-size: cover;
+}
+
+.s-spiderman-01-02 {
+  background-image: url('../images/spiderman-tobey/movie-02/background.png');
+  background-size: cover;
+}
+
+.s-spiderman-01-03 {
+  background-image: url('../images/spiderman-tobey/movie-03/background.png');
+  background-size: cover;
+}
+
+.s-loading {
+  position: fixed;
+  inset: 0;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  transition: opacity 0.4s;
+}
+
+.s-loading.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.s-loading svg {
+  width: 80px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.s-wrapper {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s;
+}
+
+.s-wrapper::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(0px);
+  z-index: 0;
+}
+
+.s-wrapper>* {
+  position: relative;
+  z-index: 1;
+}
+
+video {
+  z-index: 0 !important;
+}
+
+/* ── Loading ── */
+.s-loading {
+  position: fixed;
+  inset: 0;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.4s;
+}
+
+.s-loading.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.s-loading svg {
+  width: 80px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+}
+
+/* Camada de fundo fica ABAIXO de tudo */
+#bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.4s;
+}
+
+#bg-layer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* Wrapper sem background proprio */
+.s-wrapper {
+  background: none !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Coluna esquerda bem acima de tudo */
+.s-wrapper .s-left-column {
+  z-index: 100 !important;
+}
+
+/* Garante clicabilidade dos botoes de navegacao */
+.navigator,
+.navigator ul,
+.navigator ul li,
+.navigator ul li a,
+.navigator__icon,
+.navigator__icon a {
+  position: relative;
+  z-index: 100;
+  pointer-events: all !important;
+}
+
+.s-main-content {
+  position: relative;
+  z-index: 10;
+}
+/* ── Loading (movie page) ── */
+.s-loading {
+  position: fixed; inset: 0;
+  background: #0a0a0a;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999; transition: opacity 0.4s;
+}
+.s-loading.hidden { opacity: 0; pointer-events: none; }
+.s-loading svg { width: 80px; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+body { margin: 0; background-color: #000; }
+
+/* Camada de fundo fica abaixo de tudo */
+#bg-layer {
+  position: fixed; inset: 0; z-index: 0;
+  background-size: cover; background-position: center;
+  transition: background-image 0.4s;
+}
+#bg-layer::after {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+/* Wrapper sem background proprio */
+.s-wrapper { background: none !important; position: relative; z-index: 1; }
+
+/* Coluna esquerda clicavel */
+.s-wrapper .s-left-column { z-index: 100 !important; }
+.navigator, .navigator ul, .navigator ul li,
+.navigator ul li a, .navigator__icon, .navigator__icon a {
+  position: relative; z-index: 100; pointer-events: all !important;
+}
+.s-main-content { position: relative; z-index: 10; }

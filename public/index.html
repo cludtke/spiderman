@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/home-page-styles.css">
+  <title>Spider-Man | Multiversos</title>
+</head>
+<body>
+
+  <!-- Loading -->
+  <div class="s-loading" id="loading">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="40" stroke="white" stroke-width="8" stroke-dasharray="60 180" />
+    </svg>
+  </div>
+
+  <nav class="s-menu">
+    <ul id="nav-list">
+      <li class="s-menu__item"><a href="/">Página Inicial</a></li>
+      <!-- actors injected by JS -->
+      <li class="s-menu__icon">
+        <img src="/assets/images/icons/spider.svg" alt="Spider-Man Multiverse">
+      </li>
+    </ul>
+  </nav>
+
+  <div class="s-container">
+    <div class="s-cards-carousel" id="carousel" style="transform: translateZ(-40vw) rotateY(0deg);"></div>
+  </div>
+
+  <div class="s-controller" id="controller"></div>
+
+  
+  <script src="/assets/scripts/script.js"></script>
+  <script src="/assets/scripts/home.js"></script>
+</body>
+</html>

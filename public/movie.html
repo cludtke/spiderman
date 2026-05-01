@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spider-Man | Multiversos</title>
+  <link href="/assets/css/internal.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
+</head>
+<body>
+
+  <div class="s-loading" id="loading">
+    <svg viewBox="0 0 100 100" fill="none">
+      <circle cx="50" cy="50" r="40" stroke="#B9001F" stroke-width="8" stroke-dasharray="60 180"/>
+    </svg>
+  </div>
+
+  <!-- Camada de fundo (imagem do filme) -->
+  <div id="bg-layer"></div>
+
+  <div class="s-wrapper" id="wrapper">
+
+    <div class="s-left-column">
+      <nav class="navigator">
+        <div class="navigator__icon">
+          <a href="/"><img id="nav-icon" src="/assets/images/icons/spiderman1.png" /></a>
+        </div>
+        <ul id="nav-movies"></ul>
+      </nav>
+    </div>
+
+    <div class="s-main-content">
+      <div class="s-main-content__top">
+        <div class="s-logo">
+          <img id="movie-logo" src="" alt="" />
+        </div>
+        <div class="s-description">
+          <div class="pills">
+            <ul id="movie-pills"></ul>
+          </div>
+          <div class="s-description__text">
+            <p id="movie-synopsis"></p>
+          </div>
+        </div>
+        <div class="s-links">
+          <ul id="movie-links"></ul>
+        </div>
+      </div>
+
+      <div class="s-main-content__bottom">
+        <div class="gallery">
+          <ul id="movie-gallery"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script src="/assets/scripts/movie.js"></script>
+</body>
+</html>

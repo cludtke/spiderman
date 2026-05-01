@@ -1,0 +1,175 @@
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+const path = require('path');
+
+const adapter = new FileSync(path.join(__dirname, 'db.json'));
+const db = low(adapter);
+
+// Estrutura inicial com todos os dados do projeto original
+db.defaults({
+  actors: [
+    {
+      id: 1,
+      name: 'Tobey Maguire',
+      slug: 'tobey-maguire',
+      icon: '/assets/images/icons/spiderman1.png',
+      card_image: '/assets/images/spider-man-01.png',
+      card_background: '/assets/images/pic-sm-bg-01.jpg',
+      order: 1
+    },
+    {
+      id: 2,
+      name: 'Tom Holland',
+      slug: 'tom-holland',
+      icon: '/assets/images/icons/spiderman1-tom.png',
+      card_image: '/assets/images/spider-man-02.png',
+      card_background: '/assets/images/pic-sm-bg-02.jpg',
+      order: 2
+    },
+    {
+      id: 3,
+      name: 'Andrew Garfield',
+      slug: 'andrew-garfield',
+      icon: '/assets/images/icons/spiderman1-andrew.png',
+      card_image: '/assets/images/spider-man-03.png',
+      card_background: '/assets/images/pic-sm-bg-03.jpg',
+      order: 3
+    }
+  ],
+  movies: [
+    // ── Tobey Maguire ──
+    {
+      id: 1,
+      actor_id: 1,
+      order: 1,
+      title: 'Spider-Man',
+      year: 2002,
+      director: 'Sam Raimi',
+      trailer_url: 'https://www.youtube.com/watch?v=TYMMOjBUPMM',
+      synopsis: 'Depois de ser picado por uma aranha geneticamente modificada em uma demonstração científica, o jovem nerd Peter Parker ganha superpoderes. Inicialmente, ele pretende usá-los para ganhar dinheiro, adotando o nome de Homem-Aranha e se apresentando em lutas de exibição. Porém, ao presenciar o assassinato de seu tio Ben e sentir-se culpado, Peter decide não mais usar seus poderes para proveito próprio e sim para enfrentar o mal, tendo como seu primeiro grande desafio o psicótico Duende Verde.',
+      logo: '/assets/images/spiderman-tobey/movie-01/logo.png',
+      background: '/assets/images/spiderman-tobey/movie-01/background.png',
+      gallery: [
+        '/assets/images/spiderman-tobey/movie-01/gallery/image-01.png',
+        '/assets/images/spiderman-tobey/movie-01/gallery/image-02.png',
+        '/assets/images/spiderman-tobey/movie-01/gallery/image-03.png'
+      ]
+    },
+    {
+      id: 2,
+      actor_id: 1,
+      order: 2,
+      title: 'Spider-Man 2',
+      year: 2004,
+      director: 'Sam Raimi',
+      trailer_url: 'https://www.youtube.com/watch?v=1oHDjPFzapY',
+      synopsis: 'Peter Parker enfrenta uma crise de identidade enquanto tenta equilibrar sua vida como estudante universitário, seus sentimentos por Mary Jane Watson e suas responsabilidades como Homem-Aranha. Ao mesmo tempo, surge um novo vilão, o Doutor Octopus, um cientista brilhante transformado em monstro após um experimento mal-sucedido com quatro braços mecânicos.',
+      logo: '/assets/images/spiderman-tobey/movie-02/logo.png',
+      background: '/assets/images/spiderman-tobey/movie-02/background.png',
+      gallery: [
+        '/assets/images/spiderman-tobey/movie-02/gallery/image-01.png',
+        '/assets/images/spiderman-tobey/movie-02/gallery/image-02.png',
+        '/assets/images/spiderman-tobey/movie-02/gallery/image-03.png'
+      ]
+    },
+    {
+      id: 3,
+      actor_id: 1,
+      order: 3,
+      title: 'Spider-Man 3',
+      year: 2007,
+      director: 'Sam Raimi',
+      trailer_url: 'https://www.youtube.com/watch?v=6TIQB4hKjKs',
+      synopsis: 'Peter Parker parece ter finalmente conseguido equilibrar sua vida dupla: como estudante e como Homem-Aranha. Mas quando um meteorito traz uma substância alienígena que se funde com seu traje, Peter descobre um lado sombrio de si mesmo. Ele ainda terá que lidar com o Sandman, um criminoso com poderes de areia, e com um rival que quer destruí-lo.',
+      logo: '/assets/images/spiderman-tobey/movie-03/logo.png',
+      background: '/assets/images/spiderman-tobey/movie-03/background.png',
+      gallery: [
+        '/assets/images/spiderman-tobey/movie-03/gallery/image-01.png',
+        '/assets/images/spiderman-tobey/movie-03/gallery/image-02.png',
+        '/assets/images/spiderman-tobey/movie-03/gallery/image-03.png'
+      ]
+    },
+    // ── Tom Holland ──
+    {
+      id: 4,
+      actor_id: 2,
+      order: 1,
+      title: 'Spider-Man: De Volta ao Lar',
+      year: 2017,
+      director: 'Jon Watts',
+      trailer_url: 'https://www.youtube.com/watch?v=rk-dF1lIbIg',
+      synopsis: 'Após os eventos de Capitão América: Guerra Civil, Peter Parker tenta retomar sua rotina de estudante no ensino médio e ser o amigão da vizinhança Homem-Aranha sob a tutela de Tony Stark. Mas quando o Abutre ameaça Nova York com armas alienígenas, Peter prova que é mais do que apenas um garoto com superpoderes.',
+      logo: '/assets/images/spiderman-tom/movie-01/logo.png',
+      background: '/assets/images/spiderman-tom/movie-01/background.png',
+      gallery: [
+        '/assets/images/spiderman-tom/movie-01/gallery/image-01.png',
+        '/assets/images/spiderman-tom/movie-01/gallery/image-02.png',
+        '/assets/images/spiderman-tom/movie-01/gallery/image-03.png',
+        '/assets/images/spiderman-tom/movie-01/gallery/image-04.png'
+      ]
+    },
+    {
+      id: 5,
+      actor_id: 2,
+      order: 2,
+      title: 'Spider-Man: Longe de Casa',
+      year: 2019,
+      director: 'Jon Watts',
+      trailer_url: 'https://www.youtube.com/watch?v=Nt9L1jCKGnE',
+      synopsis: 'Peter Parker e seus amigos partem para uma viagem à Europa. Mas Peter logo precisa vestir o traje do Homem-Aranha quando Nick Fury aparece com uma missão urgente. Com a ajuda de Mysterio, Peter enfrenta criaturas elementais que ameaçam destruir o continente.',
+      logo: '/assets/images/spiderman-tom/movie-02/logo.png',
+      background: '/assets/images/spiderman-tom/movie-02/background.png',
+      gallery: []
+    },
+    {
+      id: 6,
+      actor_id: 2,
+      order: 3,
+      title: 'Spider-Man: Sem Volta para Casa',
+      year: 2021,
+      director: 'Jon Watts',
+      trailer_url: 'https://www.youtube.com/watch?v=JfVOs4VSpmA',
+      synopsis: 'Com a identidade do Homem-Aranha revelada, Peter Parker pede ajuda ao Doutor Estranho para que todos se esqueçam de que ele é o herói. Mas quando o feitiço dá errado, vilões de outros universos começam a invadir seu mundo, e Peter descobre o verdadeiro custo de ser um herói.',
+      logo: '/assets/images/spiderman-tom/movie-03/logo.png',
+      background: '/assets/images/spiderman-tom/movie-03/background.png',
+      gallery: []
+    },
+    // ── Andrew Garfield ──
+    {
+      id: 7,
+      actor_id: 3,
+      order: 1,
+      title: 'O Espetacular Homem-Aranha',
+      year: 2012,
+      director: 'Marc Webb',
+      trailer_url: 'https://www.youtube.com/watch?v=ySPaFlBULlk',
+      synopsis: 'Peter Parker é um adolescente inteligente e tímido que foi abandonado pelos pais ainda criança. Ao descobrir uma pasta secreta de seu pai, ele começa a investigar seu desaparecimento e acaba sendo picado por uma aranha geneticamente modificada. Com seus novos poderes, ele se torna o Espetacular Homem-Aranha e enfrenta o vilão Lagarto.',
+      logo: '/assets/images/spiderman-andrew/movie-01/logo.png',
+      background: '/assets/images/spiderman-andrew/movie-01/background.png',
+      gallery: [
+        '/assets/images/spiderman-andrew/movie-01/gallery/image-01.png',
+        '/assets/images/spiderman-andrew/movie-01/gallery/image-02.png',
+        '/assets/images/spiderman-andrew/movie-01/gallery/image-03.png'
+      ]
+    },
+    {
+      id: 8,
+      actor_id: 3,
+      order: 2,
+      title: 'O Espetacular Homem-Aranha 2',
+      year: 2014,
+      director: 'Marc Webb',
+      trailer_url: 'https://www.youtube.com/watch?v=JiNSVBQKLGA',
+      synopsis: 'Peter Parker reencontra seu velho amigo Harry Osborn e também enfrenta Electro, um homem que se tornou uma criatura de eletricidade viva. Enquanto combate esses novos vilões, Peter também tenta descobrir os segredos sobre o passado de seus pais e o que aconteceu com eles.',
+      logo: '/assets/images/spiderman-andrew/movie-02/logo.png',
+      background: '/assets/images/spiderman-andrew/movie-02/background.png',
+      gallery: [
+        '/assets/images/spiderman-andrew/movie-02/gallery/image-01.png',
+        '/assets/images/spiderman-andrew/movie-02/gallery/image-02.png',
+        '/assets/images/spiderman-andrew/movie-02/gallery/image-03.png'
+      ]
+    }
+  ]
+}).write();
+
+module.exports = db;
